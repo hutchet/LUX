@@ -138,13 +138,13 @@ pub struct ReadInputAll {
     // 18 bytes of auto_test stuff here I'm not doing yet
     #[nom(SkipBefore(18))] // auto_test stuff, TODO..
     #[nom(SkipBefore(2))] // bat_brand, bat_com_type
-    #[nom(Parse = "Utils::le_u16_div1")]
+    #[nom(Parse = "Utils::le_u16_div10")]
     pub max_chg_curr: f64,
-    #[nom(Parse = "Utils::le_u16_div1")]
+    #[nom(Parse = "Utils::le_u16_div10")]
     pub max_dischg_curr: f64,
-    #[nom(Parse = "Utils::le_u16_div1")]
+    #[nom(Parse = "Utils::le_u16_div10")]
     pub charge_volt_ref: f64,
-    #[nom(Parse = "Utils::le_u16_div1")]
+    #[nom(Parse = "Utils::le_u16_div10")]
     pub dischg_cut_volt: f64,
 
     pub bat_status_0: u16,
@@ -162,7 +162,7 @@ pub struct ReadInputAll {
     pub bat_count: u16,
     pub bat_capacity: u16,
 
-    #[nom(Parse = "Utils::le_u16_div100")]
+    #[nom(Parse = "Utils::le_u16_div10")]
     pub bat_current: f64,
 
     pub bms_event_1: u16, // FaultCode_BMS
@@ -171,9 +171,9 @@ pub struct ReadInputAll {
     // TODO: probably floats but need non-zero sample data to check. just guessing at the div100.
     #[nom(Parse = "Utils::le_u16_div10")]
     pub max_cell_voltage: f64,
-    #[nom(Parse = "Utils::le_u16_div1")]
+    #[nom(Parse = "Utils::le_u16_div10")]
     pub min_cell_voltage: f64,
-    #[nom(Parse = "Utils::le_u16_div1")]
+    #[nom(Parse = "Utils::le_u16_div10")]
     pub max_cell_temp: f64,
     #[nom(Parse = "Utils::le_u16_div10")]
     pub min_cell_temp: f64,
