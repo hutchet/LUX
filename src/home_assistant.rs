@@ -734,7 +734,7 @@ impl Config {
             availability: self.availability(),
             min: 0.0,
             max: 100.0,
-            step: 1.0,
+            step: 0.1,
             unit_of_measurement: "%".to_string(),
         };
 
